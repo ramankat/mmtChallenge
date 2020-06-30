@@ -11,5 +11,4 @@ public interface CouponDataRepository extends CrudRepository<CouponData,Long> {
 
     @Query(value = "select * from coupon_data where competitor = :competitor" ,nativeQuery = true)
     List<CouponData> findDataByCompetitor(@Param("competitor") String competitor);
-
 }

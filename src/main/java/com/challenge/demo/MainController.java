@@ -29,6 +29,7 @@ public class MainController {
     @GetMapping(value = "/updateCoupons")
     public String updateCoupons()
     {
+        mainService.updateCoupons();
         return "Information Updated Successfully in database";
     }
 
@@ -39,7 +40,7 @@ public class MainController {
     }
 
     @GetMapping(value = "/getAllCouponsByCompetitor")
-    public List<CouponData> getAllCoupons(@RequestParam("mobile") String competitor)
+    public List<CouponData> getAllCouponsByCompetitor(@RequestParam("competitor") String competitor)
     {
         return mainService.getAllCoupons(competitor);
     }
